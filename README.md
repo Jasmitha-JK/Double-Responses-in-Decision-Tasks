@@ -10,7 +10,7 @@ This is a course project for **Simulation-Based Inference (TU Dortmund, 2026)** 
 2. **Wrapped the simulator for BayesFlow** with prior distributions over 7 latent parameters per participant
 3. **Trained amortized neural posterior estimators** using DeepSet summary networks and FlowMatching inference networks, entirely on simulated data (50 epochs, ~8,000 synthetic participants, 3.2M synthetic trials)
 4. **Validated the inference procedure** via convergence analysis, parameter-recovery sanity checks, and Simulation-Based Calibration (SBC) on 200 synthetic datasets
-5. **Applied inference to real data** from Evans et al. (2020) — 25 participants, 400 trials each, 232 observed double responses
+5. **Applied inference to real data** from Evans et al. (2020) - 25 participants, 400 trials each, 232 observed double responses
 6. **Compared model predictions to reality** via posterior predictive checks across reaction time, accuracy, and double-response rate
 
 **Key result:** BayesFlow successfully recovers parameters, but the basic RDM model architecture fails spectacularly at reproducing double responses (~83% predicted vs. ~2.3% observed), revealing that lateral inhibition or leakage mechanisms are necessary which is consistent with Evans et al.'s original findings.

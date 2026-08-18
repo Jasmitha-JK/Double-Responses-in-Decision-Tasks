@@ -13,7 +13,7 @@ This is a course project for **Simulation-Based Inference (TU Dortmund, 2026)** 
 5. **Applied inference to real data** from Evans et al. (2020) — 25 participants, 400 trials each, 232 observed double responses
 6. **Compared model predictions to reality** via posterior predictive checks across reaction time, accuracy, and double-response rate
 
-**Key result:** BayesFlow successfully recovers parameters, but the basic RDM model architecture fails spectacularly at reproducing double responses (~83% predicted vs. ~2.3% observed), revealing that lateral inhibition or leakage mechanisms are necessary—consistent with Evans et al.'s original findings.
+**Key result:** BayesFlow successfully recovers parameters, but the basic RDM model architecture fails spectacularly at reproducing double responses (~83% predicted vs. ~2.3% observed), revealing that lateral inhibition or leakage mechanisms are necessary which is consistent with Evans et al.'s original findings.
 
 ## What's in the Report
 
@@ -28,7 +28,7 @@ The full technical report covers:
 | **Training** | Online simulation, 50 epochs × 20 batches × 8 participants = 8K datasets, training loss decay from 2.85 → 1.19 |
 | **Diagnostics** | Three calibration checks: training convergence, parameter recovery on synthetic data, SBC rank histograms (200 datasets) |
 | **Inference on Evans Data** | Posterior estimates for all 25 participants; posterior means + 95% credible intervals per parameter |
-| **Posterior Predictive Validation** | Model simulation vs. observed data: Mean RT, accuracy, double-response rate—reveals major model inadequacy |
+| **Posterior Predictive Validation** | Model simulation vs. observed data: Mean RT, accuracy, double-response rate reveals major model inadequacy |
 | **Limitations & Improvements** | Why the RDM fails (no inhibition), next steps (LCA model), calibration caveats |
 | **Conclusion** | Summary: SBI workflow works, inference is reasonable, but the cognitive model needs lateral inhibition |
 | **Reflection** | Personal learnings from the project |
@@ -38,7 +38,7 @@ The full technical report covers:
 
 **The Problem**: Speeded two-choice decisions produce reaction times and choices, but sometimes participants make a second rapid response for the unchosen alternative ("double responding"). Evans et al. (2020) showed this phenomenon constrains evidence accumulation models.
 
-**Our Solution**: We use simulation-based inference (SBI)—specifically amortized Bayesian inference via neural networks—to:
+**Our Solution**: We use simulation-based inference (SBI) specifically amortized Bayesian inference via neural networks to:
 1. Skip expensive likelihood calculations by relying on simulation
 2. Train a neural posterior estimator on simulated data once
 3. Apply that trained estimator to any new participant instantly (amortization)
@@ -177,7 +177,7 @@ Simulated 400 trials from each participant's posterior mean, compared with obser
 | Accuracy | 0.432 | 0.129 | 0.303 |
 | Double-response rate | 2.32% | 82.88% | 80.56% |
 
-**Interpretation**: The dramatic discrepancy in double-response rate is not an inference artifact (SBC shows the posterior is reasonably calibrated) but reflects the model's fundamental limitation. The RDM without lateral inhibition overpredicts double responses—consistent with Evans et al.'s original finding that models with inhibition provide much better accounts of the data.
+**Interpretation**: The dramatic discrepancy in double-response rate is not an inference artifact (SBC shows the posterior is reasonably calibrated) but reflects the model's fundamental limitation. The RDM without lateral inhibition overpredicts double responses which is consistent with Evans et al.'s original finding that models with inhibition provide much better accounts of the data.
 
 ## Limitations & Next Steps
 

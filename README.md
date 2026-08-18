@@ -226,10 +226,6 @@ If you use this code, please cite:
 2. Radev, S. T., Schmitt, M., Schumacher, L., Elsemüller, A., Pratz, V., Schälte, Y., Köthe, U., & Bürkner, P.-C. (2023). BayesFlow: Amortized Bayesian workflows with neural networks. *Journal of Open Source Software*, 8(89), 5702.
 3. Usher, M., & McClelland, J. L. (2001). The time course of perceptual choice: The leaky, competing accumulator model. *Psychological Review*, 108(3), 550–572.
 
-## License
-
-[Specify your license here, e.g., MIT, GPL-3.0, etc.]
-
 ---
 
 **Questions?** Open an issue or contact the authors.
